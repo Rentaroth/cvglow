@@ -1,0 +1,127 @@
+{
+  "id": "ididididididid",
+  "personalInfo": {
+    "completeName": {
+      "name": "Antonio",
+      "secondName": "de Jesús",
+      "lastName": "Tabares",
+      "secondLastName": "Torres"
+    },
+    "contact": {
+      "e-mail": "antonio.tabares@outlook.es",
+      "linkedIn": "https://www.linkedin.com/in/antoniojtt",
+      "phone": {
+        "region": "+57",
+        "number": "317885134"
+      },
+      "portfolio": "https://github.com/Rentaroth"
+    }
+  },
+  "about": "I'm an enthusiactic, responsible and hard working person, currently looking to start in the tech world. I have focused on studying back-end technologies. I'm goal driven, have a good problem solving and communication skills.",
+  "education": [
+    {
+      "title": "Backend Developer",
+      "description": {
+        "enphasis": "Node.js",
+        "utilities": ["express.js", "Nest.js", "MySQL", "PostgreSQL", "MongoDB"],
+        "aditional": ["SCRUM"]
+      }
+    },
+    {
+      "title": "Chemical Engineer",
+      "description": {
+        "enphasis": "Catalitic process",
+        "utilities": ["MatLab", "Aspen HySys"],
+        "aditional": ["SCRUM"]
+      }
+    }
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "level": "native"
+    },
+    {
+      "name": "English",
+      "level": "B2"
+    }
+  ],
+  "tech-skills": [
+    {
+      "name": "javascript",
+      "proficiency": 2
+    },
+    {
+      "name": "Typescript",
+      "proficiency": 2
+    },
+    {
+      "name": "Node.js",
+      "proficiency": 2
+    },
+    {
+      "name": "HTML",
+      "proficiency": 2
+    },
+    {
+      "name": "CSS",
+      "proficiency": 2
+    },
+    {
+      "name": "SQL",
+      "proficiency": 2
+    },
+    {
+      "name": "MongoDB",
+      "proficiency": 2
+    }
+  ],
+  "skills": [
+    {
+      "name": "Problem solving",
+      "proficiency": 4
+    },
+    {
+      "name": "Analitical skills",
+      "proficiency": 5
+    },
+    {
+      "name": "Detail-oriented",
+      "proficiency": 4
+    },
+    {
+      "name": "Team work",
+      "proficiency": 5
+    }
+  ],
+  "references": [
+    {
+      "name": "Adriana",
+      "lastName": "García",
+      "profession": "Graduate and Master in didactic and teaching of English",
+      "company": "Centro Colombo Americano",
+      "country": "Colombia",
+      "city": "Cartagena de Indias",
+      "contact": {
+        "phone": {
+          "region": "+57",
+          "number": "3226776002"
+        }
+      }
+    },
+    {
+      "name": "Rodrigo",
+      "lastName": "Martínez",
+      "profession": "Full Stack Developer",
+      "company": "Dualboot Partners",
+      "country": "United States",
+      "city": "Cartagena de Indias",
+      "contact": {
+        "phone": {
+          "region": "+57",
+          "number": "3205201767"
+        }
+      }
+    }
+  ]
+}

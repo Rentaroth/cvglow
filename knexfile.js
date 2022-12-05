@@ -17,7 +17,7 @@ const connection = {
     },
     seeds: {
       directory: DBdir,
-    }
+    },
   },
   testing: {
     client: 'mysql',
@@ -28,7 +28,10 @@ const connection = {
   },
   seeds: {
     directory: DBdir,
-  }
+  },
 };
 
-module.exports = process.env.NODE_ENV === development ? connection.development : connection.testing;
+module.exports =
+  process.env.NODE_ENV === 'development'
+    ? connection.development
+    : connection.testing;
