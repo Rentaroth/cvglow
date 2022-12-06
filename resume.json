@@ -20,6 +20,7 @@
   "about": "I'm an enthusiactic, responsible and hard working person, currently looking to start in the tech world. I have focused on studying back-end technologies. I'm goal driven, have a good problem solving and communication skills.",
   "education": [
     {
+      "id": "ididididididid",
       "title": "Backend Developer",
       "description": {
         "enphasis": "Node.js",
@@ -28,6 +29,7 @@
       }
     },
     {
+      "id": "ididididididid",
       "title": "Chemical Engineer",
       "description": {
         "enphasis": "Catalitic process",

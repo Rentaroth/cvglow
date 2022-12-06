@@ -1,11 +1,11 @@
 const BaseRepository = require('./baseRepository');
 
-class PersonalInfoRepository extends BaseRepository {
+class EducationRepository extends BaseRepository {
   constructor() {
-    super('PersonalInfo');
+    super('Education');
   }
 
-  async createInfo(data) {
+  async createEducation(data) {
     try {
       const result = await this.create(data);
       return result;
@@ -14,7 +14,7 @@ class PersonalInfoRepository extends BaseRepository {
     }
   }
 
-  async getInfo(id) {
+  async getEducation(id) {
     try {
       const result = await this.read(id);
       return result;
@@ -23,7 +23,7 @@ class PersonalInfoRepository extends BaseRepository {
     }
   }
 
-  async editInfo(id, data) {
+  async editEducation(id, data) {
     try {
       const result = await this.update(id, data);
       return result;
@@ -32,7 +32,7 @@ class PersonalInfoRepository extends BaseRepository {
     }
   }
 
-  async eraseInfo(id) {
+  async eraseEducation(id) {
     try {
       const result = await this.erase(id);
       return result;
@@ -42,4 +42,4 @@ class PersonalInfoRepository extends BaseRepository {
   }
 }
 
-module.exports = PersonalInfoRepository;
+module.exports = EducationRepository;
