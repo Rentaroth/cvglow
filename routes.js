@@ -5,6 +5,7 @@ module.exports = () => {
   router.use('/', routes.files);
   router.use('/personalInfo', routes.personalInfo);
   router.use('/education', routes.education);
+  router.use('/utilities', routes.utilities);
 
   return router;
 };
