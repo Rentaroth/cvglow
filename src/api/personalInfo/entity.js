@@ -1,6 +1,6 @@
-const { personalInfoRepository } = require('../../repositories');
+const { PersonalInfoRepository } = require('../../repositories');
 
-class PersonalInfo extends personalInfoRepository {
+class PersonalInfo extends PersonalInfoRepository {
   constructor(data) {
     super();
     this.id = data.id;
