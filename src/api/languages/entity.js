@@ -1,34 +1,27 @@
-const EducationRepository = require('../../repositories/educationRepository');
+const { LanguagesRepository } = require('../../repositories');
 
-class EducationEntity extends EducationRepository {
+class LanguagesEntity extends LanguagesRepository {
   constructor(data) {
     super();
     this.id = data.id;
-    this.title = data.title;
-    this.enphasis = data.enphasis;
+    this.name = data.name;
+    this.level = data.level;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
   }
 
-  async getEducationEntity() {
-    const { id } = this;
-
-    const result = await this.getEducation(id);
-    return result;
-  }
-
-  async createEducationEntity() {
+  async createLanguagesEntity() {
     const {
       id,
-      title,
-      enphasis,
+      name,
+      level,
       created_at,
       updated_at,
     } = this;
     const info = {
       id,
-      title,
-      enphasis,
+      name,
+      level,
       created_at,
       updated_at,
     }
@@ -36,30 +29,33 @@ class EducationEntity extends EducationRepository {
     return result;
   }
 
-  async updateEducationEntity() {
+  async getLanguagesEntity() {
+    const { id } = this;
+    const result = await this.read(id);
+    return result;
+  }
+
+  async updateLanguagesEntity() {
     const {
       id,
-      title,
-      enphasis,
+      name,
+      level,
       updated_at,
     } = this;
-
     const info = {
-      title,
-      enphasis,
+      name,
+      level,
       updated_at,
-    }
-
+    };
     const result = await this.update(id, info);
     return result;
   }
 
-  async eraseEducationEntity() {
+  async deleteLanguagesEntity() {
     const { id } = this;
-
     const result = await this.erase(id);
     return result;
   }
 }
 
-module.exports = EducationEntity;
+module.exports = LanguagesEntity;

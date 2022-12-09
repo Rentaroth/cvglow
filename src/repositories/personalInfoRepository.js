@@ -2,7 +2,7 @@ const BaseRepository = require('./baseRepository');
 
 class PersonalInfoRepository extends BaseRepository {
   constructor() {
-    super('PersonalInfo');
+    super('Personal_info');
   }
 
   async createInfo(data) {
