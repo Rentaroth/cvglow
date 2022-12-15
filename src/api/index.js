@@ -7,6 +7,7 @@ const languages = require('./languages');
 const skills = require('./Skills');
 const techSkills = require('./tech_skills');
 const references = require('./references');
+const experience = require('./Experience');
 
 module.exports = {
   personalInfo,
@@ -18,4 +19,5 @@ module.exports = {
   skills,
   techSkills,
   references,
+  experience,
 };

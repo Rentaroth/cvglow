@@ -53,7 +53,7 @@ class SkillsEntity extends SkillsRepository {
 
   async deleteSkillsEntity() {
     const { id } = this;
-    const result = await this.erase(id);
+    const result = await this.delete(id);
     return result;
   }
 }

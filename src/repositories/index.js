@@ -6,6 +6,7 @@ const LanguagesRepository = require('./languagesRepository');
 const SkillsRepository = require('./skillsRepository');
 const TechSkillsRepository = require('./techSkillsRepository');
 const ReferencesRepository = require('./referencesRepository');
+const ExperienceRepository = require('./experienceRepository');
 
 module.exports = {
   PersonalInfoRepository,
@@ -16,4 +17,5 @@ module.exports = {
   SkillsRepository,
   TechSkillsRepository,
   ReferencesRepository,
+  ExperienceRepository,
 };

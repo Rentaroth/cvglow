@@ -38,6 +38,17 @@
       }
     }
   ],
+  "Experience": [
+    {
+      "id": "dididididididididididididid",
+      "company": "xxxxxxxx",
+      "position": "xxxxxxxxxxxxx",
+      "startDate": "xxxxxxxxxxxxx",
+      "endDate": "xxxxxxxxxxxxxxxxx",
+      "personInCharge": "xxxxxxxxxxxxxxxx",
+      "contact": "xxx-xxxx-xxx"
+    }
+  ],
   "languages": [
     {
       "name": "Spanish",

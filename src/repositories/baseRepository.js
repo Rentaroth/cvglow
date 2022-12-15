@@ -23,7 +23,7 @@ class BaseRepository {
     return result;
   }
 
-  async erase(id) {
+  async delete(id) {
     const result = await this.db(this.table).where({ id }).del();
     return result;
   }
