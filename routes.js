@@ -10,6 +10,7 @@ module.exports = () => {
   router.use('/languages', routes.languages);
   router.use('/skills', routes.skills);
   router.use('/techSkills', routes.techSkills);
+  router.use('/references', routes.references);
 
   return router;
 };
