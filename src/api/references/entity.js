@@ -83,7 +83,7 @@ class ReferencesEntity extends ReferencesRepository {
 
   async deleteReferenceEntity() {
     const { id } = this;
-    const result = await this.erase(id);
+    const result = await this.delete(id);
     return result;
   }
 }

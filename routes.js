@@ -11,6 +11,7 @@ module.exports = () => {
   router.use('/skills', routes.skills);
   router.use('/techSkills', routes.techSkills);
   router.use('/references', routes.references);
+  router.use('/experience', routes.experience);
 
   return router;
 };

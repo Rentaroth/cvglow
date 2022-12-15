@@ -53,7 +53,7 @@ class LanguagesEntity extends LanguagesRepository {
 
   async deleteLanguagesEntity() {
     const { id } = this;
-    const result = await this.erase(id);
+    const result = await this.delete(id);
     return result;
   }
 }

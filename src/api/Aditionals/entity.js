@@ -53,7 +53,7 @@ class AditionalsEntity extends AditionalsRepository {
 
   async deleteAditionalsEntity() {
     const { id } = this;
-    const result = await this.erase(id);
+    const result = await this.delete(id);
     return result;
   }
 }

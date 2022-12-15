@@ -19,7 +19,7 @@ class PersonalInfo extends PersonalInfoRepository {
 
   async getPersonalInfo() {
     const { id } = this;
-    const result = await this.getInfo(id);
+    const result = await this.read(id);
     return result;
   }
 
@@ -53,7 +53,7 @@ class PersonalInfo extends PersonalInfoRepository {
       created_at,
       updated_at,
     };
-    const result = await this.createInfo(info);
+    const result = await this.create(info);
     return result;
   }
 
@@ -84,13 +84,13 @@ class PersonalInfo extends PersonalInfoRepository {
       portfolio,
       updated_at,
     };
-    const result = await this.editInfo(id, info);
+    const result = await this.update(id, info);
     return result;
   }
 
   async deletePersonalInfo() {
     const { id } = this;
-    const result = await this.eraseInfo(id);
+    const result = await this.delete(id);
     return result;
   }
 }
