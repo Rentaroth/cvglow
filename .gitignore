@@ -218,3 +218,6 @@ DBdata/
 
 #editorConfig
 .editorconfig
+
+#data
+./resume.json
