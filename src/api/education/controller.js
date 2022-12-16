@@ -7,8 +7,9 @@ const createEducationController = async (req, res) => {
 }
 
 const getEducationController = async (req, res) => {
-  const id = req.params.id || undefined;
-  const result = await helper.getEducationHelper(id);
+  const { id } = req.params;
+  const { join } = req.query;
+  const result = await helper.getEducationHelper(id, join);
   res.send(result).status(200);
 };
 

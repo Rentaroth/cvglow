@@ -3,10 +3,11 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable('Skills', (table) => {
-    table.integer('id').unique().primary();
+  return knex.schema.createTable('Utilities', (table) => {
+    table.integer('id', 10).unique().primary();
     table.string('name');
-    table.string('proficiency');
+    table.string('description');
+    table.integer('education_id', 10);
     table.timestamps();
   });
 };
@@ -16,5 +17,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('Skills');
+  return knex.schema.dropTable('Utilities');
 };

@@ -4,7 +4,7 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('Education', (table) => {
-    table.integer('id', 10);
+    table.integer('id', 10).unique().primary();
     table.string('title');
     table.string('enphasis');
     table.timestamps();

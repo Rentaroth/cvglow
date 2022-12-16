@@ -2,6 +2,8 @@ const path = require('path');
 const config = require('./src/config');
 
 const DBdir = path.join(__dirname, 'src', 'database');
+const DBMigDir = path.join(__dirname, 'src', 'database', 'mig');
+const DBSeedDir = path.join(__dirname, 'src', 'database', 'seed');
 
 const connection = {
   development: {
@@ -13,10 +15,10 @@ const connection = {
       host: config.database.host,
     },
     migrations: {
-      directory: DBdir,
+      directory: DBMigDir,
     },
     seeds: {
-      directory: DBdir,
+      directory: DBSeedDir,
     },
   },
   testing: {

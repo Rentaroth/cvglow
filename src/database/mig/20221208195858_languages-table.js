@@ -4,7 +4,7 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable('Languages', (table) => {
-    table.integer('id').unique().primary();
+    table.integer('id', 10).unique().primary();
     table.string('name');
     table.string('level');
     table.timestamps();

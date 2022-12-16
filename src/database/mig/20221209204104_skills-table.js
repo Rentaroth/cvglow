@@ -3,8 +3,8 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable('Tech_skills', (table) => {
-    table.integer('id').unique().primary();
+  return knex.schema.createTable('Skills', (table) => {
+    table.integer('id', 10).unique().primary();
     table.string('name');
     table.string('proficiency');
     table.timestamps();
@@ -16,5 +16,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('Tech_skills');
+  return knex.schema.dropTable('Skills');
 };
