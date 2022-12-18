@@ -13,14 +13,13 @@ class EducationEntity extends EducationRepository {
 
   async getEducationEntity() {
     const { id, join } = this;
-    if(join === 'false') {
+    if(!join || join === 'false') {
       const result = await this.read(id);
       return result;
     } else if (join === 'true'){
       const result = await this.getEdcationWithJoins(id);
       return result;
     }
-
   }
 
   async createEducationEntity() {

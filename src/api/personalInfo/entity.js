@@ -13,6 +13,7 @@ class PersonalInfo extends PersonalInfoRepository {
     this.region = data.region;
     this.phone = data.phone;
     this.portfolio = data.portfolio;
+    this.about = data.about;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
   }
@@ -35,6 +36,7 @@ class PersonalInfo extends PersonalInfoRepository {
       region,
       phone,
       portfolio,
+      about,
       created_at,
       updated_at,
     } = this;
@@ -50,6 +52,7 @@ class PersonalInfo extends PersonalInfoRepository {
       region,
       phone,
       portfolio,
+      about,
       created_at,
       updated_at,
     };
@@ -69,6 +72,7 @@ class PersonalInfo extends PersonalInfoRepository {
       region,
       phone,
       portfolio,
+      about,
       updated_at,
     } = this;
 
@@ -82,6 +86,7 @@ class PersonalInfo extends PersonalInfoRepository {
       region,
       phone,
       portfolio,
+      about,
       updated_at,
     };
     const result = await this.update(id, info);

@@ -4,10 +4,10 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('Aditionals', (table) => {
-    table.integer('id', 10).unique().primary();
-    table.string('name');
+    table.integer('id', 10).unique().primary().notNullable();
+    table.string('name').notNullable();
     table.string('description');
-    table.integer('education_id', 10);
+    table.integer('education_id', 10).notNullable();
     table.timestamps();
   });
 };

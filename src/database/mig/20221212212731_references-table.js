@@ -4,15 +4,16 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('References', (table) => {
-    table.integer('id', 10).unique().primary();
-    table.string('name');
-    table.string('last_name');
-    table.string('profession');
+    table.integer('id', 10).unique().primary().notNullable();
+    table.string('name').notNullable();
+    table.string('last_name').notNullable();
+    table.string('profession').notNullable();
     table.string('company');
-    table.string('country');
+    table.string('country').notNullable();
     table.string('city');
-    table.string('region');
-    table.integer('phone');
+    table.string('region').notNullable();
+    table.integer('phone').notNullable();
+    table.integer('person_id').unique().notNullable();
     table.timestamps();
   })
 };
