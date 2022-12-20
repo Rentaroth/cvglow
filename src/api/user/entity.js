@@ -36,10 +36,17 @@ class UserEntity extends UserRepository {
     return result;
   }
 
-  async getUserByUsername() {
-    const { user_name } = this;
-    const result = await this.getUserByUsernameRepo(user_name);
-    return result;
+  async getUserBy() {
+    const { user_name, e_mail } = this;
+    if(user_name) {
+      const result = await this.getUserByUsernameRepo(user_name);
+      return result;
+    } else if(e_mail) {
+      const result = await this.getUserByEmailRepo(e_mail);
+      return result;
+    } else {
+      throw new Error('Not enough arguments to log in');
+    }
   }
 
   async updateUserEntity() {
