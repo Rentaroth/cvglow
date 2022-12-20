@@ -1,8 +1,8 @@
 const entity = require('./entity');
+const auth = require('../../services/auth');
 const { customAlphabet } = require('nanoid');
 const nanoid = customAlphabet('12345678909', 8);
 const bcrypt = require('bcrypt');
-const auth = require('../../services/auth');
 
 const createUserHelper = async (data) => {
   data.id = nanoid(8);
@@ -61,10 +61,20 @@ const authorization = async (data) => {
   }
 };
 
+const keepLogged = (data) => {
+  const info = {
+    user_name: data.userName,
+    e_mail: data.eMail,
+  }
+  const token = auth.generateToken(info);
+  return token;
+}
+
 module.exports = {
   createUserHelper,
   getUserHelper,
   updateUserHelper,
   deleteUserHelper,
   authorization,
+  keepLogged,
 };

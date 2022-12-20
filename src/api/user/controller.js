@@ -11,9 +11,20 @@ const createUserController = async (req, res, next) => {
 }
 
 const generateSession = async (req, res, next) => {
+  console.log(req.body);
   try {
     const { data } = req.body;
     const result = await helper.authorization(data);
+    return res.send({ token: result }).status(200);
+  } catch (error) {
+    next(error);
+  }
+}
+
+const keepSessionAlive = async (req, res, next) => {
+  try {
+    const data = req.aproved;
+    const result = await helper.keepLogged(data);
     return res.send({ token: result }).status(200);
   } catch (error) {
     next(error);
@@ -58,4 +69,5 @@ module.exports = {
   getUserController,
   updateUserController,
   deleteUserController,
+  keepSessionAlive,
 }
