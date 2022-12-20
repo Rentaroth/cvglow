@@ -11,8 +11,9 @@ const writePersonalInfo = async (data) => {
   return result;
 };
 
-const bringPersonalInfo = async (id) => {
-  const entity = new PersonalInfo({ id });
+const bringPersonalInfo = async (id, index) => {
+  const indexArray = index ==='true' ? true : false;
+  const entity = new PersonalInfo({ id, indexArray });
   const result = await entity.getPersonalInfo();
   return result;
 };

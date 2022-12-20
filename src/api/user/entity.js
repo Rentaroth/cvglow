@@ -27,7 +27,7 @@ class UserEntity extends UserRepository {
 
   async getUserEntity() {
     const { id } = this;
-    const result = await this.read(id);
+    const result = await this.getUserWithJoins(id);
     return result;
   }
 
