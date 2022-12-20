@@ -9,6 +9,7 @@ class UserEntity extends UserRepository {
     this.e_mail = data.eMail;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
+    this.extend = data.extend;
   }
 
   async createUserEntity() {
@@ -26,8 +27,18 @@ class UserEntity extends UserRepository {
   }
 
   async getUserEntity() {
-    const { id } = this;
+    const { id, extend } = this;
+    if(!extend) {
+      const result = await this.read(id);
+      return result;
+    }
     const result = await this.getUserWithJoins(id);
+    return result;
+  }
+
+  async getUserByUsername() {
+    const { user_name } = this;
+    const result = await this.getUserByUsernameRepo(user_name);
     return result;
   }
 
