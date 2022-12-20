@@ -4,9 +4,10 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('Skills', (table) => {
-    table.integer('id').unique().primary();
-    table.string('name');
+    table.integer('id', 10).unique().primary().notNullable();
+    table.string('name').notNullable();
     table.string('proficiency');
+    table.integer('person_id').unique().notNullable();
     table.timestamps();
   });
 };

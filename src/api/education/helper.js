@@ -3,7 +3,7 @@ const { customAlphabet } = require('nanoid');
 const nanoid = customAlphabet('1234567890', 8);
 
 const createEducationHelper = async (data) => {
-  data.id = nanoid();
+  data.id = nanoid(8);
   data.createdAt = new Date();
   data.updatedAt = new Date();
   const eduEntity = new EducationEntity(data);
@@ -12,8 +12,12 @@ const createEducationHelper = async (data) => {
   return result;
 };
 
-const getEducationHelper = async (id) => {
-  const eduEntity = new EducationEntity({ id });
+const getEducationHelper = async (id, join) => {
+  const info = {
+    id,
+    join,
+  };
+  const eduEntity = new EducationEntity(info);
 
   const result = await eduEntity.getEducationEntity();
   return result;

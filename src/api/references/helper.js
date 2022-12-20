@@ -3,7 +3,7 @@ const { customAlphabet } = require('nanoid');
 const nanoid = customAlphabet('1234567890', 8);
 
 const createReferenceHelper = async (data) => {
-  data.id = nanoid();
+  data.id = nanoid(8);
   data.createdAt = new Date();
   data.updatedAt = new Date();
   const RefEntity = new ReferencesEntity(data);

@@ -8,7 +8,9 @@
     "start": "nodemon index.js",
     "mig": "npx knex migrate:make",
     "mig-up": "npx knex migrate:up",
-    "mig-down": "npx knex migrate:down"
+    "mig-all": "npx knex migrate:latest --env development",
+    "mig-down": "npx knex migrate:down",
+    "mig-none": "npx knex migrate:rollback --all"
   },
   "repository": {
     "type": "git",

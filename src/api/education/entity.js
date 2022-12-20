@@ -8,13 +8,18 @@ class EducationEntity extends EducationRepository {
     this.enphasis = data.enphasis;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
+    this.join = data.join;
   }
 
   async getEducationEntity() {
-    const { id } = this;
-
-    const result = await this.getEducation(id);
-    return result;
+    const { id, join } = this;
+    if(!join || join === 'false') {
+      const result = await this.read(id);
+      return result;
+    } else if (join === 'true'){
+      const result = await this.getEdcationWithJoins(id);
+      return result;
+    }
   }
 
   async createEducationEntity() {

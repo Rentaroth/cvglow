@@ -13,7 +13,8 @@ const addPersonalInfo = async (req, res, next) => {
 const bringPersonalInfo = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await helper.bringPersonalInfo(id);
+    const { group } = req.query;
+    const result = await helper.bringPersonalInfo(id, group);
     return res.send(result).status(200);
   } catch (error) {
     next(error);

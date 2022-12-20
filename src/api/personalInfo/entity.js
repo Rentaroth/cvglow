@@ -13,12 +13,18 @@ class PersonalInfo extends PersonalInfoRepository {
     this.region = data.region;
     this.phone = data.phone;
     this.portfolio = data.portfolio;
+    this.about = data.about;
+    this.user_id = data.userId;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
   }
 
   async getPersonalInfo() {
     const { id } = this;
+    if(!id) {
+      const result = await this.read(id);
+      return result;
+    }
     const result = await this.read(id);
     return result;
   }
@@ -35,6 +41,8 @@ class PersonalInfo extends PersonalInfoRepository {
       region,
       phone,
       portfolio,
+      about,
+      user_id,
       created_at,
       updated_at,
     } = this;
@@ -50,6 +58,8 @@ class PersonalInfo extends PersonalInfoRepository {
       region,
       phone,
       portfolio,
+      about,
+      user_id,
       created_at,
       updated_at,
     };
@@ -69,6 +79,7 @@ class PersonalInfo extends PersonalInfoRepository {
       region,
       phone,
       portfolio,
+      about,
       updated_at,
     } = this;
 
@@ -82,6 +93,7 @@ class PersonalInfo extends PersonalInfoRepository {
       region,
       phone,
       portfolio,
+      about,
       updated_at,
     };
     const result = await this.update(id, info);
