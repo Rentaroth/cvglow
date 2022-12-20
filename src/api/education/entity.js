@@ -32,7 +32,7 @@ class EducationEntity extends EducationRepository {
       created_at,
       updated_at,
     }
-    const result = await this.createEducation(info);
+    const result = await this.create(info);
     return result;
   }
 
@@ -50,14 +50,14 @@ class EducationEntity extends EducationRepository {
       updated_at,
     }
 
-    const result = await this.editEducation(id, info);
+    const result = await this.update(id, info);
     return result;
   }
 
   async eraseEducationEntity() {
     const { id } = this;
 
-    const result = await this.eraseEducation(id);
+    const result = await this.delete(id);
     return result;
   }
 }

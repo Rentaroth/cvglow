@@ -1,61 +1,61 @@
-const { AditionalsRepository } = require('../../repositories');
+const { LanguagesRepository } = require('../../repositories');
 
-class AditionalsEntity extends AditionalsRepository {
+class LanguagesEntity extends LanguagesRepository {
   constructor(data) {
     super();
     this.id = data.id;
     this.name = data.name;
-    this.description = data.description;
+    this.level = data.level;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
   }
 
-  async createAditionalsEntity() {
+  async createLanguagesEntity() {
     const {
       id,
       name,
-      description,
+      level,
       created_at,
       updated_at,
     } = this;
     const info = {
       id,
       name,
-      description,
+      level,
       created_at,
       updated_at,
-    };
+    }
     const result = await this.create(info);
     return result;
   }
 
-  async getAditionalsEntity() {
+  async getLanguagesEntity() {
     const { id } = this;
     const result = await this.read(id);
     return result;
   }
 
-  async updateAditionalsEntity() {
+  async updateLanguagesEntity() {
     const {
       id,
       name,
-      description,
+      level,
       updated_at,
     } = this;
     const info = {
       name,
-      description,
+      level,
       updated_at,
     };
     const result = await this.update(id, info);
     return result;
   }
 
-  async deleteAditionalsEntity() {
+  async deleteLanguagesEntity() {
     const { id } = this;
     const result = await this.delete(id);
     return result;
   }
 }
 
-module.exports = AditionalsEntity;
+module.exports = LanguagesEntity;

@@ -2,7 +2,12 @@ const files = require('./files');
 const personalInfo = require('./personalInfo');
 const education = require('./education');
 const utilities = require('./utilities');
-const aditionals = require('./Aditionals');
+const aditionals = require('./aditionals');
+const languages = require('./languages');
+const skills = require('./Skills');
+const techSkills = require('./tech_skills');
+const references = require('./references');
+const experience = require('./Experience');
 
 module.exports = {
   personalInfo,
@@ -10,4 +15,9 @@ module.exports = {
   files,
   utilities,
   aditionals,
+  languages,
+  skills,
+  techSkills,
+  references,
+  experience,
 };

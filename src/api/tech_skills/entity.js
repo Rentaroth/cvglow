@@ -1,61 +1,61 @@
-const { AditionalsRepository } = require('../../repositories');
+const { TechSkillsRepository } = require('../../repositories');
 
-class AditionalsEntity extends AditionalsRepository {
+class TechSkillsEntity extends TechSkillsRepository {
   constructor(data) {
     super();
     this.id = data.id;
     this.name = data.name;
-    this.description = data.description;
+    this.proficiency = data.proficiency;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
   }
 
-  async createAditionalsEntity() {
+  async createTechSkillsEntity() {
     const {
       id,
       name,
-      description,
+      proficiency,
       created_at,
       updated_at,
     } = this;
     const info = {
       id,
       name,
-      description,
+      proficiency,
       created_at,
       updated_at,
-    };
+    }
     const result = await this.create(info);
     return result;
   }
 
-  async getAditionalsEntity() {
+  async getTechSkillsEntity() {
     const { id } = this;
     const result = await this.read(id);
     return result;
   }
 
-  async updateAditionalsEntity() {
+  async updateTechSkillsEntity() {
     const {
       id,
       name,
-      description,
+      proficiency,
       updated_at,
     } = this;
     const info = {
       name,
-      description,
+      proficiency,
       updated_at,
     };
     const result = await this.update(id, info);
     return result;
   }
 
-  async deleteAditionalsEntity() {
+  async deleteTechSkillsEntity() {
     const { id } = this;
     const result = await this.delete(id);
     return result;
   }
 }
 
-module.exports = AditionalsEntity;
+module.exports = TechSkillsEntity;
