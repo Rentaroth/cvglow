@@ -38,7 +38,7 @@ const deleteUserHelper = async (id) => {
 const authorization = async (data) => {
   if(data.userName) {
     const UserEntity = new entity(data);
-    const userArrived = await UserEntity.getUserByUsername();
+    const userArrived = await UserEntity.getUserBy();
     const user = userArrived[0];
     const passTest = await bcrypt.compare(data.password, user.password);
     if(!passTest) {
