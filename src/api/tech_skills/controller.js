@@ -3,6 +3,8 @@ const helper = require('./helper');
 const createTechSkillsController = async (req, res, next) => {
   try {
     const { data } = req.body;
+    const { aproved } = req;
+    data.authorized = aproved;
     const result = await helper.createTechSkillsHelper(data);
     return res.send(result).status(201);
   } catch (error) {

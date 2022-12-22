@@ -10,6 +10,7 @@ class ExperienceEntity extends ExperienceRepository {
     this.end_date = data.endDate;
     this.person_in_charge = data.personInCharge;
     this.contact = data.contact;
+    this.person_id = data.personId;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
   }
@@ -23,6 +24,7 @@ class ExperienceEntity extends ExperienceRepository {
       end_date,
       person_in_charge,
       contact,
+      person_id,
       created_at,
       updated_at,
     } = this;
@@ -34,6 +36,7 @@ class ExperienceEntity extends ExperienceRepository {
       end_date,
       person_in_charge,
       contact,
+      person_id,
       created_at,
       updated_at,
     };

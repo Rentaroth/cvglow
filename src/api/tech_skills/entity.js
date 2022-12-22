@@ -6,6 +6,7 @@ class TechSkillsEntity extends TechSkillsRepository {
     this.id = data.id;
     this.name = data.name;
     this.proficiency = data.proficiency;
+    this.person_id = data.personId;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
   }
@@ -15,6 +16,7 @@ class TechSkillsEntity extends TechSkillsRepository {
       id,
       name,
       proficiency,
+      person_id,
       created_at,
       updated_at,
     } = this;
@@ -22,6 +24,7 @@ class TechSkillsEntity extends TechSkillsRepository {
       id,
       name,
       proficiency,
+      person_id,
       created_at,
       updated_at,
     }
