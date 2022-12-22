@@ -7,7 +7,7 @@ exports.up = function(knex) {
     table.integer('id', 10).unique().primary().notNullable();
     table.string('name').notNullable();
     table.string('proficiency');
-    table.integer('person_id').unique().notNullable();
+    table.integer('person_id').notNullable();
     table.timestamps();
   });
 };

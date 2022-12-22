@@ -12,6 +12,7 @@ class ReferencesEntity extends ReferencesRepository {
     this.city = data.city;
     this.region = data.region;
     this.phone = data.phone;
+    this.person_id = data.personId;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
   }
@@ -27,6 +28,7 @@ class ReferencesEntity extends ReferencesRepository {
       city,
       region,
       phone,
+      person_id,
       created_at,
       updated_at,
     } = this;
@@ -40,6 +42,7 @@ class ReferencesEntity extends ReferencesRepository {
       city,
       region,
       phone,
+      person_id,
       created_at,
       updated_at,
     };

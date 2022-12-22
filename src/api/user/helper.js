@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const createUserHelper = async (data) => {
   data.id = nanoid(8);
   data.password = await bcrypt.hash(data.password, 5);
+  data.personId = nanoid(8);
   data.createdAt = new Date();
   data.updatedAt = new Date();
   const UserEntity = new entity(data);

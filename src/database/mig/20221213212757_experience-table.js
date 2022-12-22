@@ -11,7 +11,7 @@ exports.up = function(knex) {
     table.timestamp('end_date');
     table.string('person_in_charge');
     table.integer('contact').notNullable();
-    table.integer('person_id').unique().notNullable();
+    table.integer('person_id').notNullable();
     table.timestamps();
   })
 };

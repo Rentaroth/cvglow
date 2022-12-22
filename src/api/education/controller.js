@@ -3,6 +3,8 @@ const helper = require('./helper');
 const createEducationController = async (req, res, next) => {
   try {
     const { data } = req.body;
+    const { aproved } = req;
+    data.authorized = aproved;
     const result = await helper.createEducationHelper(data);
     res.send(result).status(201);
   } catch (error) {

@@ -11,7 +11,6 @@ const createUserController = async (req, res, next) => {
 }
 
 const generateSession = async (req, res, next) => {
-  console.log(req.body);
   try {
     const { data } = req.body;
     const result = await helper.authorization(data);

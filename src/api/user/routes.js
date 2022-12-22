@@ -5,9 +5,9 @@ const auth = require('../../services/auth').verifyToken;
 router.post('/', controller.createUserController);
 router.post('/login', controller.generateSession);
 router.post('/keep-logged', auth, controller.keepSessionAlive);
-router.get('/', controller.getUserController);
-router.get('/:id', controller.getUserController);
-router.put('/:id', controller.updateUserController);
-router.delete('/:id', controller.deleteUserController);
+router.get('/', auth, controller.getUserController);
+router.get('/:id', auth, controller.getUserController);
+router.put('/:id', auth, controller.updateUserController);
+router.delete('/:id', auth, controller.deleteUserController);
 
 module.exports = router;

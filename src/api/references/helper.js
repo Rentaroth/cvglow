@@ -4,6 +4,8 @@ const nanoid = customAlphabet('1234567890', 8);
 
 const createReferenceHelper = async (data) => {
   data.id = nanoid(8);
+  const { authorizated } = data;
+  data.personId = authorizated.id;
   data.createdAt = new Date();
   data.updatedAt = new Date();
   const RefEntity = new ReferencesEntity(data);

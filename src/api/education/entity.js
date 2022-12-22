@@ -6,6 +6,7 @@ class EducationEntity extends EducationRepository {
     this.id = data.id;
     this.title = data.title;
     this.enphasis = data.enphasis;
+    this.person_id = data.personId;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
     this.join = data.join;
@@ -27,6 +28,7 @@ class EducationEntity extends EducationRepository {
       id,
       title,
       enphasis,
+      person_id,
       created_at,
       updated_at,
     } = this;
@@ -34,6 +36,7 @@ class EducationEntity extends EducationRepository {
       id,
       title,
       enphasis,
+      person_id,
       created_at,
       updated_at,
     }

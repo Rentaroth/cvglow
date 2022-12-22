@@ -3,6 +3,7 @@ const helper = require('./helper');
 const addPersonalInfo = async (req, res, next) => {
   try {
     const { data } = req.body;
+    data.authorized = req.aproved;
     const result = await helper.writePersonalInfo(data);
     return res.send(result).status(201);
   } catch (error) {
@@ -13,8 +14,7 @@ const addPersonalInfo = async (req, res, next) => {
 const bringPersonalInfo = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { group } = req.query;
-    const result = await helper.bringPersonalInfo(id, group);
+    const result = await helper.bringPersonalInfo(id);
     return res.send(result).status(200);
   } catch (error) {
     next(error);
