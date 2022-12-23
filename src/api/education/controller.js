@@ -34,10 +34,10 @@ const updateEducationController = async (req, res, next) => {
   }
 };
 
-const eraseEducationController = async (req, res, next) => {
+const deleteEducationController = async (req, res, next) => {
   try {
     const { id } = req.params;
-    await helper.eraseEducationHelper(id);
+    await helper.deleteEducationHelper(id);
     res.send({ body: 'Done!'}).status(203);
   } catch (error) {
     next(error);
@@ -48,5 +48,5 @@ module.exports = {
   createEducationController,
   getEducationController,
   updateEducationController,
-  eraseEducationController,
+  deleteEducationController,
 }

@@ -7,13 +7,25 @@ class EducationRepository extends BaseRepository {
 
   async getEdcationWithJoins(id) {
     const { table } = this;
+    const Utilities = await this.db('Utilities')
+      .select('*')
+      .where({ education_id: id });
+    const Aditionals = await this.db('Aditionals')
+      .select('*')
+      .where({ education_id: id });
+
     const result = await this.db(table)
-    .join('Utilities', { 'Education.id': 'Utilities.education_id' })
-    .join('Aditionals', { 'Education.id': 'Aditionals.education_id' })
-    .select('*')
-    .where(table + '.id', id)
-    .options({ nestTables: true })
-    .first();
+      .where(table + '.id', id)
+      .select('*')
+    result[0].Utilities = Utilities;
+    result[0].Aditionals = Aditionals;
+    return result;
+  }
+
+  async deleteEducationWithForeigns(id) {
+    await this.db('Utilities').where({ education_id: id }).del();
+    await this.db('Aditionals').where({ education_id: id }).del();
+    const result = await this.delete(id)
     return result;
   }
 }

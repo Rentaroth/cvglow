@@ -8,7 +8,7 @@ const generateToken = async (data) => {
     eMail: data.e_mail,
     personId: data.person_id,
   }
-  const hashed = await jwt.sign(info, config.auth.secret, { expiresIn: '3h' });
+  const hashed = await jwt.sign(info, config.auth.secret, { expiresIn: '24h' });
   return hashed;
 }
 const verifyToken = async (req, res, next) => {

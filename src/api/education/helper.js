@@ -33,9 +33,9 @@ const editEducationHelper = async (id, data) => {
   return result;
 };
 
-const eraseEducationHelper = async (id) => {
+const deleteEducationHelper = async (id) => {
   const eduEntity = new EducationEntity({ id });
-  const result = await eduEntity.eraseEducationEntity();
+  const result = await eduEntity.deleteEducationEntity();
   return result;
 };
 
@@ -43,5 +43,5 @@ module.exports = {
   createEducationHelper,
   getEducationHelper,
   editEducationHelper,
-  eraseEducationHelper,
+  deleteEducationHelper,
 }

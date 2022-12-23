@@ -62,10 +62,10 @@ class EducationEntity extends EducationRepository {
     return result;
   }
 
-  async eraseEducationEntity() {
+  async deleteEducationEntity() {
     const { id } = this;
 
-    const result = await this.delete(id);
+    const result = await this.deleteEducationWithForeigns(id);
     return result;
   }
 }
