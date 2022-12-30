@@ -32,7 +32,6 @@ class EducationRepository extends BaseRepository {
           }
           if (!aditFilter.includes(element.Aditionals.id)) {
             Adit.push(element.Aditionals);
-            console.log(Adit)
             return aditFilter.push(element.Aditionals.id);
           }
         });
@@ -41,6 +40,18 @@ class EducationRepository extends BaseRepository {
         return final;
       });
     return result;
+  }
+
+  async checkIdentity(id, token) {
+    const person = await this.read(id);
+    if(person[0].person_id === token.personId) {
+      return true;
+    } else {
+      const error = new Error();
+      error.User = 'Can not verify identity, id does not exist';
+      error.status = 401;
+      throw error;
+    }
   }
 
   async deleteEducationWithForeigns(id) {

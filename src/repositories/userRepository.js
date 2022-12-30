@@ -30,6 +30,11 @@ class UserRepository extends BaseRepository {
     const result = await this.db(this.table).where({ e_mail: eMail });
     return result;
   }
+  async deleteUserWithJoins(id) {
+    await this.db('Personal_info').where({ user_id: id }).del();
+    const result = await this.delete(id);
+    return result;
+  }
 }
 
 module.exports = UserRepository;

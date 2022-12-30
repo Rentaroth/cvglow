@@ -10,6 +10,7 @@ class EducationEntity extends EducationRepository {
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
     this.join = data.join;
+    this.token = data.token;
   }
 
   async getEducationEntity() {
@@ -66,6 +67,12 @@ class EducationEntity extends EducationRepository {
     const { id } = this;
 
     const result = await this.deleteEducationWithForeigns(id);
+    return result;
+  }
+
+  async checkIdentityEntity() {
+    const { id, token } = this;
+    const result = await this.checkIdentity(id, token);
     return result;
   }
 }

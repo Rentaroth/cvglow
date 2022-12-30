@@ -5,8 +5,11 @@ const createEducationController = async (req, res, next) => {
     const { data } = req.body;
     const { aproved } = req;
     data.authorized = aproved;
-    const result = await helper.createEducationHelper(data);
-    res.send(result).status(201);
+    const pass = await helper.checkIdentityHelper(id, aproved);
+    if(pass) {
+      const result = await helper.createEducationHelper(data);
+      res.send(result).status(201);
+    }
   } catch (error) {
     next(error);
   }
@@ -15,9 +18,13 @@ const createEducationController = async (req, res, next) => {
 const getEducationController = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const { aproved } = req;
     const { join } = req.query;
-    const result = await helper.getEducationHelper(id, join);
-    res.send(result).status(200);
+    const pass = await helper.checkIdentityHelper(id, aproved);
+    if(pass) {
+      const result = await helper.getEducationHelper(id, join);
+      res.send(result).status(200);
+    }
   } catch (error) {
     next(error);
   }
@@ -27,8 +34,11 @@ const updateEducationController = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { data } = req.body;
-    await helper.editEducationHelper(id, data);
-    res.send({ body: 'Done!' }).status(203);
+    const pass = await helper.checkIdentityHelper(id, aproved);
+    if(pass) {
+      await helper.editEducationHelper(id, data);
+      res.send({ body: 'Done!' }).status(203);
+    }
   } catch (error) {
     next(error);
   }
@@ -37,8 +47,11 @@ const updateEducationController = async (req, res, next) => {
 const deleteEducationController = async (req, res, next) => {
   try {
     const { id } = req.params;
-    await helper.deleteEducationHelper(id);
-    res.send({ body: 'Done!'}).status(203);
+    const pass = await helper.checkIdentityHelper(id, aproved);
+    if(pass) {
+      await helper.deleteEducationHelper(id);
+      res.send({ body: 'Done!'}).status(203);
+    }
   } catch (error) {
     next(error);
   }
