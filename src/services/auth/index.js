@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const config = require('../../config');
+const BaseRepository = require('../../repositories/baseRepository');
 
 const generateToken = async (data) => {
   const info = {
@@ -14,6 +15,10 @@ const generateToken = async (data) => {
 const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers.authorization;
+    const { id } = req.params;
+    const { baseUrl } = req;
+    let table = baseUrl.replace('/', '');
+    table = table[0].toUpperCase() + table.replace(table[0], '');
     if(!token) {
       const error = new Error();
       error.status = 401;
@@ -27,11 +32,29 @@ const verifyToken = async (req, res, next) => {
       error.user = 'Not Authorized!';
       throw error;
     }
+    const pass = await confirmIdentity(table, id, verification);
+    if(!pass) {
+      const error = new Error();
+      error.status = 401;
+      error.user = 'Not Authorized!';
+      throw error;
+    }
     req.aproved = verification;
     return next();
   } catch (error) {
     next(error);
   }
+}
+
+const confirmIdentity = async (table, id, token) => {
+  if(!id) {
+    return true;
+  }
+
+  const base = new BaseRepository(table);
+  const result = await base.checkIdentity(id, token);
+  return result;
+
 }
 
 const decodeToken = (token) => {

@@ -10,8 +10,8 @@ class UserRepository extends BaseRepository {
       const result = await this.db
         .select('*')
         .from(this.table)
-        .where('id', id)
-        .join(this.table + '.id', '=', 'Personal_info.user_id')
+        .where(this.table + '.id', id)
+        .join('Personal_info', this.table + '.id', '=', 'Personal_info.user_id')
         .options({ nestTables: true });
       return result;
     }

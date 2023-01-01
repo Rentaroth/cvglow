@@ -39,16 +39,9 @@ const deleteEducationHelper = async (id) => {
   return result;
 };
 
-const checkIdentityHelper = async (id, token) => {
-  const eduEntity = new EducationEntity({ id, token });
-  const result = await eduEntity.checkIdentityEntity();
-  return result;
-};
-
 module.exports = {
   createEducationHelper,
   getEducationHelper,
   editEducationHelper,
   deleteEducationHelper,
-  checkIdentityHelper,
 }

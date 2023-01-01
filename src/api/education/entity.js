@@ -69,12 +69,6 @@ class EducationEntity extends EducationRepository {
     const result = await this.deleteEducationWithForeigns(id);
     return result;
   }
-
-  async checkIdentityEntity() {
-    const { id, token } = this;
-    const result = await this.checkIdentity(id, token);
-    return result;
-  }
 }
 
 module.exports = EducationEntity;

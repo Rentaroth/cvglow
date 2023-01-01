@@ -15,7 +15,7 @@ const createReferenceHelper = async (data) => {
 
 const getReferenceHelper = async (id) => {
   const RefEntity = new ReferencesEntity({ id });
-  const result = await RefEntity.getReferencesEntity();
+  const result = await RefEntity.getReferenceEntity();
   return result;
 }
 
