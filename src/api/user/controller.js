@@ -3,6 +3,18 @@ const helper = require('./helper');
 const createUserController = async (req, res, next) => {
   try {
     const { data } = req.body;
+    data.isAdmin = false;
+    const result = await helper.createUserHelper(data);
+    return res.send(result).status(201);
+  } catch (error) {
+    next(error);
+  }
+}
+
+const createAdminController = async (req, res, next) => {
+  try {
+    const { data } = req.body;
+    data.isAdmin = req.isAdmin;
     const result = await helper.createUserHelper(data);
     return res.send(result).status(201);
   } catch (error) {
@@ -64,6 +76,7 @@ const deleteUserController = async (req, res, next) => {
 
 module.exports = {
   createUserController,
+  createAdminController,
   generateSession,
   getUserController,
   updateUserController,

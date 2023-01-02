@@ -8,6 +8,7 @@ const generateToken = async (data) => {
     userName: data.user_name,
     eMail: data.e_mail,
     personId: data.person_id,
+    isAdmin: data.is_admin === 1 ? true : false,
   }
   const hashed = await jwt.sign(info, config.auth.secret, { expiresIn: '24h' });
   return hashed;
@@ -29,14 +30,14 @@ const verifyToken = async (req, res, next) => {
     if(!verification) {
       const error = new Error();
       error.status = 401;
-      error.user = 'Not Authorized!';
+      error.user = { message: 'Not Authorized!' };
       throw error;
     }
     const pass = await confirmIdentity(table, id, verification);
     if(!pass) {
       const error = new Error();
       error.status = 401;
-      error.user = 'Not Authorized!';
+      error.user = { message: 'Not Authorized!' };
       throw error;
     }
     req.aproved = verification;
@@ -47,14 +48,12 @@ const verifyToken = async (req, res, next) => {
 }
 
 const confirmIdentity = async (table, id, token) => {
-  if(!id) {
-    return true;
+  if(!token.isAdmin) {
+    const base = new BaseRepository(table);
+    const result = await base.checkIdentity(id, token);
+    return result;
   }
-
-  const base = new BaseRepository(table);
-  const result = await base.checkIdentity(id, token);
-  return result;
-
+  return true;
 }
 
 const decodeToken = (token) => {

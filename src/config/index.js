@@ -14,4 +14,7 @@ module.exports = {
   auth: {
     secret: process.env.AUTH_SECRET,
   },
+  admin: {
+    pass: process.env.ADMIN_PASS,
+  },
 };
