@@ -4,6 +4,8 @@ const nanoid = customAlphabet('1234567890', 8);
 
 const createSkillsHelper = async (data) => {
   data.id = nanoid(8);
+  const { authorized } = data;
+  data.personId = authorized.personId;
   data.createdAt = new Date();
   data.updatedAt = new Date();
   const SkillEntity = new SkillsEntity(data);

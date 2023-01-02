@@ -13,7 +13,7 @@ exports.up = function(knex) {
     table.string('city');
     table.string('region').notNullable();
     table.integer('phone').notNullable();
-    table.integer('person_id').unique().notNullable();
+    table.integer('person_id').notNullable();
     table.timestamps();
   })
 };

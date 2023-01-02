@@ -27,6 +27,17 @@ class BaseRepository {
     const result = await this.db(this.table).where({ id }).del();
     return result;
   }
+
+  async checkIdentity(id, token) {
+    const person = await this.read(id);
+    if(!person[0].person_id === token.personId) {
+      const error = new Error();
+      error.User = 'Can not verify identity, id does not exist';
+      error.status = 401;
+      throw error;
+    }
+    return true;
+  }
 }
 
 module.exports = BaseRepository;

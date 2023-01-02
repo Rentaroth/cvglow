@@ -6,9 +6,11 @@ class EducationEntity extends EducationRepository {
     this.id = data.id;
     this.title = data.title;
     this.enphasis = data.enphasis;
+    this.person_id = data.personId;
     this.created_at = data.createdAt;
     this.updated_at = data.updatedAt;
     this.join = data.join;
+    this.token = data.token;
   }
 
   async getEducationEntity() {
@@ -27,6 +29,7 @@ class EducationEntity extends EducationRepository {
       id,
       title,
       enphasis,
+      person_id,
       created_at,
       updated_at,
     } = this;
@@ -34,6 +37,7 @@ class EducationEntity extends EducationRepository {
       id,
       title,
       enphasis,
+      person_id,
       created_at,
       updated_at,
     }
@@ -59,10 +63,10 @@ class EducationEntity extends EducationRepository {
     return result;
   }
 
-  async eraseEducationEntity() {
+  async deleteEducationEntity() {
     const { id } = this;
 
-    const result = await this.delete(id);
+    const result = await this.deleteEducationWithForeigns(id);
     return result;
   }
 }

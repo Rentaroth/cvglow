@@ -3,6 +3,7 @@ const helper = require('./helper');
 const createLanguagesController = async (req, res, next) => {
   try {
     const { data } = req.body;
+    data.authorizated = req.aproved;
     const result = await helper.createLanguagesHelper(data);
     return res.send(result).status(201);
   } catch (error) {
