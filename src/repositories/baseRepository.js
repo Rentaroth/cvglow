@@ -30,7 +30,7 @@ class BaseRepository {
 
   async checkIdentity(id, token) {
     const person = await this.read(id);
-    if(!person[0].person_id === token.personId) {
+    if (!person[0].person_id === token.personId) {
       const error = new Error();
       error.User = 'Can not verify identity, id does not exist';
       error.status = 401;

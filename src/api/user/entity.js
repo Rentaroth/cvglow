@@ -42,7 +42,14 @@ class UserEntity extends UserRepository {
   async getUserEntity() {
     const { id, extend } = this;
     if (!extend) {
-      const result = await this.read(id);
+      let result;
+      await this.read(id)
+      .then((data) => {
+        data.forEach(item => {
+          delete item.password;
+        })
+        result = data;
+      });
       return result;
     }
     const result = await this.getUserWithJoins(id);

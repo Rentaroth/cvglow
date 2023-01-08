@@ -7,19 +7,34 @@ class UserRepository extends BaseRepository {
 
   async getUserWithJoins(id) {
     if (id) {
-      const result = await this.db
+      let result;
+      await this.db
         .select('*')
         .from(this.table)
         .where(this.table + '.id', id)
         .join('Personal_info', this.table + '.id', '=', 'Personal_info.user_id')
-        .options({ nestTables: true });
+        .options({ nestTables: true })
+        .then((data) => {
+          data.forEach(item => {
+            delete item.User.password;
+          })
+          console.log(data);
+          result = data;
+        });
       return result;
     }
-    const result = await this.db
+    let result;
+    await this.db
       .select('*')
       .from(this.table)
       .join('Personal_info', this.table + '.id', '=', 'Personal_info.user_id')
-      .options({ nestTables: true });
+      .options({ nestTables: true })
+      .then((data) => {
+        data.forEach(item => {
+          delete item.User.password;
+        })
+        result = data;
+      });
     return result;
   }
   async getUserByUsernameRepo(userName) {
