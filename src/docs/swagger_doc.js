@@ -32,6 +32,8 @@ const schema = {
     '/utilities': paths.utilitiesPath,
     '/aditionals': paths.aditionalsPath,
     '/education': paths.educationPath,
+    '/user/admin': paths.adminPath,
+    '/user/login': paths.loginPath,
   },
   components: {
     schemas: {

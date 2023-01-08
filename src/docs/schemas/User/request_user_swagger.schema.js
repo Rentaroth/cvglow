@@ -1,23 +1,19 @@
 const requestUserSchema = {
-  type: "object",
+  type: 'object',
   properties: {
     id: {
-      type: "integer",
-      example: 837492318
+      type: 'integer',
+      example: 837492318,
     },
     userName: {
-      type: "string",
-      example: "Elma-carron"
+      type: 'string',
+      example: 'Elma-carron',
     },
     eMail: {
-      type: "string",
-      example: "Elma-carron@mail.com"
+      type: 'string',
+      example: 'Elma-carron@mail.com',
     },
-    personId: {
-      type: "integer",
-      example:837492318
-    }
-  }
-}
+  },
+};
 
 module.exports = { requestUserSchema };

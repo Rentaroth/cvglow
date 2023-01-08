@@ -38,6 +38,7 @@ const {
   responseEducationSchema,
   educationJoinSchema,
 } = require('./Education');
+const { requestAdminSchema } = require('./Admin');
 
 module.exports = {
   responseUserSchema,
@@ -64,6 +65,7 @@ module.exports = {
   responseEducationSchema,
   requestEducationSchema,
   educationJoinSchema,
+  requestAdminSchema,
   statusCode200: code200,
   statusCode401,
 };
