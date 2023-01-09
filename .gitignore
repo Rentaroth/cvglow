@@ -221,3 +221,6 @@ DBdata/
 
 #data
 ./resume.json
+
+#package-lock
+./package-lock.json

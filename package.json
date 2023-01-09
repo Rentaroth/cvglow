@@ -4,7 +4,6 @@
   "description": "Backend made for manage data to make a cv frontend.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "start-dev": "nodemon index.js",
     "mig": "npx knex migrate:make",
