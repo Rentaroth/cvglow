@@ -30,6 +30,7 @@ const get = {
       flat: '#/components/schemas/personalInfoSchema'
     }),
     401: statusCodes.statusCode401,
+    404: statusCodes.statusCode404,
   },
 };
 

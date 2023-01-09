@@ -44,6 +44,7 @@ const get = {
     401: {
       description: 'Unauthorized for this action',
     },
+    404: statusCodes.statusCode404,
   },
 };
 

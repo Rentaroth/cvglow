@@ -13,7 +13,7 @@ const {
   requestLanguagesSchema,
   responseLanguagesSchema,
 } = require('./Languages');
-const { statusCode401, statusCode200 } = require('./codes');
+const { statusCode401, statusCode200, statusCode404 } = require('./codes');
 const code200 = statusCode200();
 const { referencesSchema, requestReferencesSchema } = require('./References');
 const { requestSkillsSchema, responseSkillsSchema } = require('./Skills');
@@ -68,4 +68,5 @@ module.exports = {
   requestAdminSchema,
   statusCode200: code200,
   statusCode401,
+  statusCode404,
 };

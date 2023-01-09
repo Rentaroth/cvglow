@@ -58,8 +58,14 @@ const confirmIdentity = async (table, id, token) => {
 
 const decodeToken = (token) => {
   const preparedToken = token.replace('Bearer ', '');
-  const data = jwt.verify(preparedToken, config.auth.secret);
-  return data;
+  try {
+    const data = jwt.verify(preparedToken, config.auth.secret);
+    return data;
+  } catch (error) {
+    error.user = { message: 'Not authorized for this action!' };
+    error.status = 401;
+    throw error;
+  }
 }
 
 module.exports = {

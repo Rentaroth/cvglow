@@ -28,6 +28,7 @@ const get = {
   responses: {
     200: statusCodes.statusCode200({ flat: '#/components/schemas/requestAditionalsSchema'}),
     401: statusCodes.statusCode401,
+    404: statusCodes.statusCode404,
   },
 };
 

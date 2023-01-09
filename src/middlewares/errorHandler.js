@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const errorManagement = (err, req, res, next) => {
   console.error(err.stack);
   console.error(err.message);

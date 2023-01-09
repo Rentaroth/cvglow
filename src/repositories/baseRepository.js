@@ -7,9 +7,22 @@ class BaseRepository {
   async read(id) {
     if (id) {
       const result = await this.db.select('*').from(this.table).where({ id });
+      if(result.length === 0) {
+        console.log('Hay error!');
+        let error = new Error();
+        error.user = { message: 'Not found!' };
+        error.status = 404;
+        throw error;
+      }
       return result;
     }
     const result = await this.db.select('*').from(this.table);
+    if(result.length === 0) {
+      let error = new Error();
+      error.user = { message: 'Not found!' };
+      error.status = 404;
+      throw error;
+    }
     return result;
   }
 
