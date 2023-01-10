@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "node-express-demo",
 	"version": "0.0.0",
 	"private": true,
@@ -8,4 +9,52 @@
 	"dependencies": {
 		"express": "^4.17.1"
 	}
+=======
+  "name": "cv_online_backend",
+  "version": "1.0.0",
+  "description": "Backend made for manage data to make a cv frontend.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "nodemon index.js",
+    "mig": "npx knex migrate:make",
+    "mig-up": "npx knex migrate:up",
+    "mig-all": "npx knex migrate:latest --env development",
+    "mig-down": "npx knex migrate:down",
+    "mig-none": "npx knex migrate:rollback --all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Rentaroth/CV_Online.git"
+  },
+  "keywords": [
+    "CV",
+    "Backend"
+  ],
+  "author": "Antonio de Jesús Tabares Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rentaroth/CV_Online/issues"
+  },
+  "homepage": "https://github.com/Rentaroth/CV_Online#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "nanoid": "^3.3.4",
+    "swagger-jsdoc": "^6.2.7",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+>>>>>>> e292e86cf140d14f61a4c10ebd4740eb62cf6d20
 }

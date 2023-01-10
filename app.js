@@ -1,15 +1,9 @@
-const express = require('express');
-const app = express();
-const port = 80;
+const app = require('./server');
+const config = require('./src/config');
+const { swaggerDocs } = require('./src/docs/swagger');
 
-app.get('/', (req, res) => {
-	res.send('Hello World!');
-});
-
-app.get('/api/:id', (req, res) => {
-	res.send(`Get resource for ${req.params.id}.`);
-});
-
+const port = config.api.port;
 app.listen(port, () => {
-	console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Listening on port: ${port}`);
+  swaggerDocs(app, port);
 });
