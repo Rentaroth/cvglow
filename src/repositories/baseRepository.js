@@ -8,9 +8,8 @@ class BaseRepository {
     if (id) {
       const result = await this.db.select('*').from(this.table).where({ id });
       if(result.length === 0) {
-        console.log('Hay error!');
-        let error = new Error();
-        error.user = { message: 'Not found!' };
+        let error = new Error('Not found in database!');
+        result = { message: 'Not found!' };
         error.status = 404;
         throw error;
       }
@@ -18,7 +17,7 @@ class BaseRepository {
     }
     const result = await this.db.select('*').from(this.table);
     if(result.length === 0) {
-      let error = new Error();
+      let error = new Error('Not found in database!');
       error.user = { message: 'Not found!' };
       error.status = 404;
       throw error;

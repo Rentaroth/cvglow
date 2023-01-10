@@ -17,7 +17,13 @@ const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers.authorization;
     const { id } = req.params;
-    const { baseUrl } = req;
+    let { baseUrl } = req;
+    console.log(baseUrl);
+    if(baseUrl === '/personalInfo') {
+      baseUrl = 'Personal_info';
+    } else if(baseUrl === '/techSkills') {
+      baseUrl = 'Tech_skills';
+    }
     let table = baseUrl.replace('/', '');
     table = table[0].toUpperCase() + table.replace(table[0], '');
     if(!token) {
