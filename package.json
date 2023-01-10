@@ -1,15 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "node-express-demo",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"start": "node app.js"
-	},
-	"dependencies": {
-		"express": "^4.17.1"
-	}
-=======
   "name": "cv_online_backend",
   "version": "1.0.0",
   "description": "Backend made for manage data to make a cv frontend.",
@@ -56,5 +45,4 @@
   "devDependencies": {
     "nodemon": "^2.0.19"
   }
->>>>>>> e292e86cf140d14f61a4c10ebd4740eb62cf6d20
 }
