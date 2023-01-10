@@ -1,4 +1,4 @@
-const responseEducationSchema = {
+const requestEducationSchema = {
   type: 'object',
   properties: {
     name: {
@@ -12,4 +12,4 @@ const responseEducationSchema = {
   },
 };
 
-module.exports = { responseEducationSchema };
+module.exports = { requestEducationSchema };
