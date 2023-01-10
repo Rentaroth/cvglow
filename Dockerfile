@@ -3,10 +3,10 @@ FROM node:12-alpine AS builder
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY package.json  .
+COPY package*.json  .
 RUN npm install
 
-COPY . .
+COPY . /app
 
-EXPOSE 80
-CMD [ "npm", "run", "start" ]
+EXPOSE 3010
+CMD [ "npm", "start" ]
