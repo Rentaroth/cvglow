@@ -16,16 +16,6 @@ const generateToken = async (data) => {
 const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers.authorization;
-    const { id } = req.params;
-    let { baseUrl } = req;
-    console.log(baseUrl);
-    if(baseUrl === '/personalInfo') {
-      baseUrl = 'Personal_info';
-    } else if(baseUrl === '/techSkills') {
-      baseUrl = 'Tech_skills';
-    }
-    let table = baseUrl.replace('/', '');
-    table = table[0].toUpperCase() + table.replace(table[0], '');
     if(!token) {
       const error = new Error();
       error.status = 401;
@@ -39,7 +29,7 @@ const verifyToken = async (req, res, next) => {
       error.user = { message: 'Not Authorized!' };
       throw error;
     }
-    const pass = await confirmIdentity(table, id, verification);
+    const pass = await confirmIdentity(verification);
     if(!pass) {
       const error = new Error();
       error.status = 401;
@@ -53,10 +43,10 @@ const verifyToken = async (req, res, next) => {
   }
 }
 
-const confirmIdentity = async (table, id, token) => {
+const confirmIdentity = async (token) => {
   if(!token.isAdmin) {
-    const base = new BaseRepository(table);
-    const result = await base.checkIdentity(id, token);
+    const base = new BaseRepository('User');
+    const result = await base.checkIdentity(token.id, token);
     return result;
   }
   return true;

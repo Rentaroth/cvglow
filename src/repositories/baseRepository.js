@@ -6,7 +6,7 @@ class BaseRepository {
 
   async read(id) {
     if (id) {
-      const result = await this.db.select('*').from(this.table).where({ id });
+      let result = await this.db.select('*').from(this.table).where({ id });
       if(result.length === 0) {
         let error = new Error('Not found in database!');
         result = { message: 'Not found!' };
@@ -15,7 +15,7 @@ class BaseRepository {
       }
       return result;
     }
-    const result = await this.db.select('*').from(this.table);
+    let result = await this.db.select('*').from(this.table);
     if(result.length === 0) {
       let error = new Error('Not found in database!');
       error.user = { message: 'Not found!' };
