@@ -1,6 +1,4 @@
 const PersonalInfo = require('./entity');
-const { customAlphabet } = require('nanoid');
-const nanoid = customAlphabet('1234567890', 8);
 
 const writePersonalInfo = async (data) => {
   const { authorized } = data;
