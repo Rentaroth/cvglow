@@ -18,12 +18,9 @@ const bringPersonalInfo = async (id) => {
 };
 
 const editPersonalInfo = async (id, data) => {
-  const info = {
-    id: id,
-    ...data,
-    updatedAt: new Date(),
-  };
-  const entity = new PersonalInfo(info);
+  data.id = id;
+  data.updatedAt = new Date();
+  const entity = new PersonalInfo(data);
   const result = await entity.updatePersonalInfo();
   return result;
 };
