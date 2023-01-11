@@ -18,6 +18,7 @@ const bringPersonalInfo = async (id) => {
 };
 
 const editPersonalInfo = async (id, data) => {
+  console.log(id, data);
   let info = {
     id: id,
     ...data,
