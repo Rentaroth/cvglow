@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-cors = require('cors');
-compression = require('compression');
+const cors = require('cors');
+const compression = require('compression');
 const { errorHandler } = require('./src/middlewares');
 //expressvalidator = require('express-validator');
 
@@ -15,6 +15,6 @@ app.use(compression());
 
 app.use('/', routes);
 app.use(errorHandler.errorManagement);
-
+cors
 
 module.exports = app;
