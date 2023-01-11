@@ -24,9 +24,9 @@ const bringPersonalInfo = async (req, res, next) => {
 const modifyPersonalInfo = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { info } = req.body;
-    await helper.editPersonalInfo(id, info);
-    return res.send('Done!').status(200);
+    const { data } = req.body;
+    await helper.editPersonalInfo(id, data);
+    return res.send({ body: 'Done!' }).status(200);
   } catch (error) {
     next(error);
   }
