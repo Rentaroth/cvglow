@@ -15,6 +15,5 @@ app.use(compression());
 
 app.use('/', routes);
 app.use(errorHandler.errorManagement);
-cors
 
 module.exports = app;
