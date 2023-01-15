@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const cors = require('cors');
 const compression = require('compression');
 const { errorHandler } = require('./src/middlewares');
@@ -8,8 +8,7 @@ const { errorHandler } = require('./src/middlewares');
 const routes = require('./routes')();
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.bodyParser());
 app.use(cors());
 app.use(compression());
 
