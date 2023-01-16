@@ -5,8 +5,10 @@
       "use": "@vercel/node"
     }
   ],
-  "devComand": "node index.js",
-  "installCommand": "npm install",
-  "public": true,
-  "trailingSlash": true
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
