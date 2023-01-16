@@ -17,7 +17,7 @@ const schema = {
   },
   servers: [
     {
-      url: 'http://localhost:3010/',
+      url: 'https://cvglow.onrender.com/',
     },
   ],
   tags,
