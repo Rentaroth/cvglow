@@ -1,13 +1,12 @@
-FROM node:12-alpine AS builder
+FROM node:16-alpine AS builder
 
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY package.json  .
-COPY yarn.lock .
-RUN yarn install
+COPY package*.json  .
+RUN npm install
 
-COPY . .
+COPY . /app
 
-EXPOSE 80
-CMD [ "yarn", "run", "start" ]
+EXPOSE 3010
+CMD [ "npm", "start" ]
