@@ -6,6 +6,6 @@ router.post('/', auth, controller.createReferenceController);
 router.get('/', auth, controller.getReferenceController);
 router.get('/:id', auth, controller.getReferenceController);
 router.put('/:id', auth, controller.updateReferenceController);
-router.delete('/', auth, controller.deleteReferenceController);
+router.delete('/:id', auth, controller.deleteReferenceController);
 
 module.exports = router;
