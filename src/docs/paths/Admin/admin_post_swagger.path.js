@@ -8,7 +8,7 @@ const post = {
   requestBody: {
     description: 'Body schema for Admmin account creation',
     content: {
-      'data: application/json': {
+      'application/json': {
         schema: {
           $ref: '#/components/schemas/requestAdminSchema',
         },

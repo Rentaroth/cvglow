@@ -1,15 +1,20 @@
 const requestLanguagesSchema = {
   type: 'object',
   properties: {
-    name: {
-      type: 'string',
-      example: 'English',
+    data: {
+      type: 'object',
+      properties: {
+        name: {
+          type: 'string',
+          example: 'English',
+        },
+        level: {
+          type: 'string',
+          example: 'B2',
+        },
+      },
     },
-    level: {
-      type: 'string',
-      example: 'B2',
-    },
-  }
+  },
 };
 
 module.exports = { requestLanguagesSchema };

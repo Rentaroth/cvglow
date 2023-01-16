@@ -28,7 +28,7 @@ const put = {
   requestBody: {
     description: 'Body schema for Languages modification',
     content: {
-      'data: application/json': {
+      'application/json': {
         schema: {
           $ref: '#/components/schemas/requestLanguagesSchema',
         },

@@ -28,7 +28,7 @@ const put = {
   requestBody: {
     description: 'Body schema for tech skills information modification',
     content: {
-      'data: application/json': {
+      'application/json': {
         schema: {
           $ref: '#/components/schemas/requestTechSkillsSchema',
         },

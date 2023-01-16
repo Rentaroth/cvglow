@@ -7,7 +7,7 @@ const post = {
   requestBody: {
     description: 'Body schema for User account creation',
     content: {
-      'data: application/json': {
+      'application/json': {
         schema: {
           $ref: '#/components/schemas/requestUserSchema',
         },

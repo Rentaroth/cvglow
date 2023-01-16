@@ -1,13 +1,18 @@
 const requestEducationSchema = {
   type: 'object',
   properties: {
-    name: {
-      type: 'string',
-      example: 'Engineer',
-    },
-    enphasis: {
-      type: 'string',
-      example: 'Industrial Processes',
+    data: {
+      type: 'object',
+      properties: {
+        name: {
+          type: 'string',
+          example: 'Engineer',
+        },
+        enphasis: {
+          type: 'string',
+          example: 'Industrial Processes',
+        },
+      },
     },
   },
 };

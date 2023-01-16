@@ -16,7 +16,7 @@ const post = {
   requestBody: {
     description: 'Body schema for utilities creation',
     content: {
-      'data: application/json': {
+      'application/json': {
         schema: {
           $ref: '#/components/schemas/requestUtilitiesSchema',
         },
