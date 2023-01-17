@@ -4,10 +4,13 @@ const { put } = require('./education_put_swagger.path');
 const { erase } = require('./education_delete_swagger.path');
 
 const educationPath = {
-  get,
   post,
+  get,
+}
+const educationPathId = {
+  get,
   put,
   delete: erase,
 }
 
-module.exports = { educationPath };
+module.exports = { educationPath, educationPathId };

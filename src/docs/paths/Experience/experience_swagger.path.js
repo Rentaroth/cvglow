@@ -4,10 +4,13 @@ const { put } = require('./experience_put_swagger.path');
 const { erase } = require('./experience_delete_swagger.path');
 
 const experiencePath = {
-  get,
   post,
+  get,
+}
+const experiencePathId = {
+  get,
   put,
   delete: erase,
 }
 
-module.exports = { experiencePath };
+module.exports = { experiencePath, experiencePathId };

@@ -4,10 +4,13 @@ const { put } = require('./person_put_swagger.path');
 const { erase } = require('./person_delete_swagger.path');
 
 const personalInfoPath = {
-  get,
   post,
+  get,
+}
+const personalInfoPathId = {
+  get,
   put,
   delete: erase,
 }
 
-module.exports = { personalInfoPath };
+module.exports = { personalInfoPath, personalInfoPathId };

@@ -6,8 +6,11 @@ const { erase } = require('./user_delete_swagger.path');
 const userPath = {
   post,
   get,
+}
+const userPathId = {
+  get,
   put,
   delete: erase,
 }
 
-module.exports = { userPath };
+module.exports = { userPath, userPathId };

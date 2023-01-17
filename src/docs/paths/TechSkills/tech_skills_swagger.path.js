@@ -4,10 +4,13 @@ const { put } = require('./tech_skills_put_swagger.path');
 const { erase } = require('./tech_skills_delete_swagger.path');
 
 const techSkillsPath = {
-  get,
   post,
+  get,
+};
+const techSkillsPathId = {
+  get,
   put,
   delete: erase,
-};
+}
 
-module.exports = { techSkillsPath };
+module.exports = { techSkillsPath, techSkillsPathId };

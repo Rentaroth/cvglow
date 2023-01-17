@@ -4,10 +4,13 @@ const { put } = require('./languages_put._swagger.path');
 const { erase } = require('./languages_delete_swagger.path');
 
 const languagesPath = {
-  get,
   post,
+  get,
+}
+const languagesPathId = {
+  get,
   put,
   delete: erase,
 }
 
-module.exports = { languagesPath };
+module.exports = { languagesPath, languagesPathId };

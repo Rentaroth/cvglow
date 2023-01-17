@@ -4,10 +4,13 @@ const { put } = require('./references_put_swagger.path');
 const { erase } = require('./references_delete_swagger.path');
 
 const referencesPath = {
-  get,
   post,
+  get,
+};
+const referencesPathId = {
+  get,
   put,
   delete: erase,
-}
+};
 
-module.exports = { referencesPath };
+module.exports = { referencesPath, referencesPathId };

@@ -4,10 +4,13 @@ const { put } = require('./skills_put_swagger.path');
 const { erase } = require('./skils_delete_swagger.path');
 
 const skillsPath = {
-  get,
   post,
+  get,
+}
+const skillsPathId = {
+  get,
   put,
   delete: erase,
 }
 
-module.exports = { skillsPath };
+module.exports = { skillsPath, skillsPathId };

@@ -4,10 +4,13 @@ const { put } = require('./aditionals_put_swagger.path');
 const { erase } = require('./aditionals_delete_swagger.path');
 
 const aditionalsPath = {
-  get,
   post,
+  get,
+}
+const aditionalsPathId = {
+  get,
   put,
   delete: erase,
 }
 
-module.exports = { aditionalsPath };
+module.exports = { aditionalsPath, aditionalsPathId };

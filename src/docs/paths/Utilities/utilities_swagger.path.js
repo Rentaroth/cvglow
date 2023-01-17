@@ -4,10 +4,13 @@ const { put } = require('./utilities_put_swagger.path');
 const { erase } = require('./utilities_delete_swagger.path');
 
 const utilitiesPath = {
-  get,
   post,
+  get,
+}
+const utilitiesPathId = {
+  get,
   put,
   delete: erase,
 }
 
-module.exports = { utilitiesPath };
+module.exports = { utilitiesPath, utilitiesPathId };
