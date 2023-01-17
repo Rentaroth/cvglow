@@ -20,7 +20,7 @@ const schema = {
       url: 'https://cvglow.onrender.com/',
     },
     {
-      url: 'https://localhost:3010/',
+      url: 'http://localhost:3010/',
     },
   ],
   tags,

@@ -67,5 +67,6 @@ const decodeToken = (token) => {
 module.exports = {
   generateToken,
   verifyToken,
+  decodeToken,
 };
 
